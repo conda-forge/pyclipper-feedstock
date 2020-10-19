@@ -1,37 +1,38 @@
 {% set name = "pyclipper" %}
-{% set version = "1.1.0.post1" %}
+{% set version = "1.2.0" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  sha256: 8a8b6018d53fcce291f78dedca19994f82695eed3a2c9eff275691d4ed9aab51
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyclipper-{{ version }}.zip
+  sha256: 7a9035ca6732dcef3ef33f98d9a844bb5f2be16bd659300c38ef366aac2e3a47
 
 build:
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-
   host:
     - python
     - pip
-    - wheel
-    - setuptools
-    - setuptools_scm_git_archive
-    - setuptools_scm
-
+    - cython >=0.28
+    - setuptools_scm >=1.11.1
   run:
     - python
 
 test:
   imports:
     - pyclipper
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/fonttools/pyclipper
