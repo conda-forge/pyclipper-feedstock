@@ -1,5 +1,5 @@
 {% set name = "pyclipper" %}
-{% set version = "1.2.1" %}
+{% set version = "1.3.0.post2" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyclipper-{{ version }}.zip
-  sha256: ca3751e93559f0438969c46f17459d07f983281dac170c3479de56492e152855
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyclipper-{{ version }}.tar.gz
+  sha256: c096703dc32f2e4700a1f7054e8b58c29fe86212fa7a2c2adecb0102cb639fb2
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
