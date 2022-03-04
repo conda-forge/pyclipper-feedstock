@@ -234,6 +234,3 @@ Feedstock Maintainers
 
 * [@jakakokosar](https://github.com/jakakokosar/)
 
-
-<!-- dummy commit to enable rerendering -->
-
