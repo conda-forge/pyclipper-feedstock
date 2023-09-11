@@ -372,5 +372,4 @@ Feedstock Maintainers
 =====================
 
 * [@jakakokosar](https://github.com/jakakokosar/)
-* [@jonaslalin](https://github.com/jonaslalin/)
 
